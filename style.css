@@ -6,19 +6,19 @@
 }
 
 body {
-  background-color: rgba(128, 15, 233, 0.418);
   overflow-x: hidden;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.5rem;
   position: sticky;
   top: 0;
   z-index: 5;
-  background: rgba(255, 255, 255, 0.1);
+  background: orange;
   backdrop-filter: blur(2px);
+  overflow-x: hidden;
 }
 
 nav {
@@ -37,6 +37,7 @@ ul > li {
   padding: 1rem ;
   list-style: none;
   color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
 ul > li:hover {
@@ -51,9 +52,8 @@ section {
 }
 
 #section1 {
-  margin-top: -7.7rem;
   width: 100%;
-  height: 100vh;
+  height: 92vh;
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Puente_Rosario_victoria_y_Luna.JPG/2560px-Puente_Rosario_victoria_y_Luna.JPG');
   background-size: cover;
   background-repeat: no-repeat;
@@ -62,14 +62,20 @@ section {
 }
 
 .header-section {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 2rem;
+  bottom: -2%;
+}
+
+.logo {
+  cursor: pointer;
 }
 
 .titulo {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .ver-todo {
@@ -85,37 +91,126 @@ section {
   border: 2px solid orange;
 }
 
-.slider-container {
-  width: 100%;
-  height: 80%;
+ #section2 {
+  overflow: hidden;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  gap: 20px;
-  transition: all 0.3 ease;
+  position: relative;
 }
 
-.slide {
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.779));
-  justify-content: center;
+.btnPreviewContainer {
+  position: relative;
+  bottom: 40%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
 }
 
-.slide:hover {
-  transform: scale(1.02);
-  filter: drop-shadow(0 0 10px rgb(18, 111, 117));
-
-}
-
-.slide img{
-  width: 300px;
-  max-width: 400px;
-  height: 90%;
-  border-radius: 20px;
-  object-fit: cover;
+.text {
+  color: white;
+  position: relative;
+  top: 88%;
+  left: 7%;
 }
 
 .slider-button {
   font-size: 2rem;
   width: fit-content;
-  border-radius: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.slider-button:hover {
+  fill: orange;
+  transform: scale(1.08);
+}
+
+.slider-container {
+  width: fit-content;
+  height: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  gap: 20px;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.container-mes {
+  position: relative;
+  width: 250px;
+  max-width: 100%;
+  height: 80%;
+  object-fit: contain;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  filter: drop-shadow(0 0 5px black);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.container-mes:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 5px rgba(16, 197, 173, 0.752));
+}
+
+#section3 {
+  background: radial-gradient(purple, black);
+}
+
+#section3 .titulo {
+  color: white;
+}
+
+.container-grid {
+  height: 80%;
+  padding: 2rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(4,1fr);
+  gap: 10px;
+  grid-template-areas: 
+    "cultura arquitectura urbanismo"
+    "cultura arte arte"
+    "literatura historia leyendas"
+    "musica musica leyendas"
+}
+
+.section-grid {
+  background-color: rgba(0, 255, 255, 0.418);
+  color: white;
+  border-radius: 10px;
+}
+
+#grid-cultura {
+  grid-area: cultura;
+}
+#grid-arquitectura {
+  grid-area: arquitectura;
+}
+#grid-arte {
+  grid-area: arte;
+}
+#grid-historia {
+  grid-area: historia;
+}
+#grid-literatura {
+  grid-area: literatura;
+}
+#grid-urbanismo {
+  grid-area: urbanismo;
+}
+#grid-leyendas {
+  grid-area: leyendas;
+}
+#grid-musica {
+  grid-area: musica;
 }
