@@ -21,6 +21,13 @@ const images = [
     'https://www.cadena3.com/admin/playerswf/fotos/ARCHI_1043177.jpg'
 ];
 
+const preloadedImages = [];
+for (let i = 0; i < totalImages; i++) {
+    const image = new Image();
+    image.src = images[i % totalImages];
+    preloadedImages.push(image);
+}
+
 function updateSlider() {
     sliderContainer.innerHTML = '';
     for (let i = currentIndex; i < currentIndex + visibleImages; i++) {
