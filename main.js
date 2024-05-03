@@ -1,3 +1,203 @@
+///////////////  SLIDER PRINCIPAL  /////////////
+const meses = [
+  {
+    mes: 'Enero', place: 'La Florida', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'assets/atardecer.jpeg'
+  },
+  {
+    mes: 'Febrero', place: 'Carnavales', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'assets/paisaje.jpg'
+    
+  },
+  {
+    mes: 'Marzo', place: 'Carnavales', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'https://img.freepik.com/foto-gratis/puesta-sol-misurina_181624-34793.jpg?t=st=1713888383~exp=1713891983~hmac=4783aaf120e9c98e2da14c6603e53a67f1c13627b600418864714602076fc314&w=740'
+    
+  },
+  {
+    mes: 'Abril', place: 'Malvinas', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'https://images.unsplash.com/photo-1708804760932-d97756d67419?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    
+  },
+  {
+    mes: 'Mayo', place: 'Carnavales', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'https://imgs.search.brave.com/I5U6zhjLDM_4w1h-IQK1hFNyHK1tEWFmDUMP_UK9SDI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQz/ODExODc1Ni9lcy9m/b3RvL3RvbWEtYSVD/MyVBOXJlYS1zb2Jy/ZS1lbC1yJUMzJUFE/by1wYXJhbiVDMyVB/MS1mcmVudGUtYS1s/YS1jaXVkYWQtZGUt/cm9zYXJpby5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9YS02/M29EZXI5WUNEMkg4/QzBpWWVBZWcyMTg3/NzFVdl81eFJOTVM5/Sng5ST0'
+    
+  },
+  {
+    mes: 'Junio', place: 'Dia de la Bandera', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'https://imgs.search.brave.com/EhKcLvaTMu4-MhDILXah4eg2UTb65lVFUVFo2DEkJa8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/d2VsY29tZWFyZ2Vu/dGluYS5jb20vcm9z/YXJpby9pbWFnZW5l/cy9yb3NhcmlvMjku/anBn'
+    
+  },
+  {
+    mes: 'Julio', place: 'Carnavales', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'https://plus.unsplash.com/premium_photo-1700577888245-9729a4fe6040?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    
+  },
+  {
+    mes: 'Agosto', place: 'Carnavales', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'https://imgs.search.brave.com/y0ojmSsbE7pFmI3VVNqJv1B-dDLvPYTAgXtjY1kXilo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/d2VsY29tZWFyZ2Vu/dGluYS5jb20vcm9z/YXJpby9pbWFnZW5l/cy9yb3NhcmlvLTE0/OS5qcGc'
+    
+  },
+  {
+    mes: 'Septiembre', place: 'Carnavales', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'https://media.istockphoto.com/id/1220007180/es/foto/vista-panor%C3%A1mica-de-la-ciudad-de-rosario-a-lo-largo-del-r%C3%ADo-paran%C3%A1-durante-la-puesta-del-sol.jpg?s=612x612&w=0&k=20&c=TyuUWT17vhzEmfIDFbGpTr8s7it-5zHwo1VSPYau8-A='
+    
+  },
+  {
+    mes: 'Octubre', place: 'Carnavales', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'https://lh5.googleusercontent.com/proxy/n27m6HwUaWVVfWwfHHbc4ICjdzXtAB8U1132B_S3o5Ric3ytNc9Ev6Q2mgKNb5Sdr1f3pOR4NGeehJjl6w8nmpKAKFQCevWAEcZ0Ie0G5a3tZ3KtVvNo4LtqJhkWSNj7dE06'
+    
+  },
+  {
+    mes: 'Noviembre', place: 'Colectividades', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'https://media.istockphoto.com/id/1441190334/es/foto/hermosa-foto-de-un-d%C3%ADa-soleado-en-skate-park.jpg?s=612x612&w=0&k=20&c=-yhtTQGJKfIq8WwzsKwKMp1bib1FDAbm4aWKx_2dnc4='
+    
+  },
+  {
+    mes: 'Diciembre', place: 'Fiestas', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'https://t4.ftcdn.net/jpg/02/28/72/81/360_F_228728148_rTnDutNQJZwhaJTAjpID197qYi6HTRbA.jpg'
+    
+  },
+];
+
+
+class Cards {
+  constructor(mes, place, description, image) {
+    this.mes = mes;
+    this.place = place;
+    this.description = description;
+    this.image = image;
+    this.cardElement = this.createCard();
+    this.presentacionElement = this.createPresentacion();
+  }
+
+  createCard() {
+    const cardContainer = document.createElement('div');
+    cardContainer.classList.add('card');
+
+    const containerText = document.createElement('div');
+    containerText.classList.add('container-text');
+
+    const placeText = document.createElement('div');
+    placeText.classList.add('place-text');
+    placeText.innerHTML = this.place;
+    containerText.appendChild(placeText);
+
+    const mesText = document.createElement('div');
+    mesText.classList.add('mes-text');
+    mesText.innerHTML = this.mes;
+    containerText.appendChild(mesText);
+
+    const descriptionText = document.createElement('div');
+    descriptionText.classList.add('description-text');
+    containerText.appendChild(descriptionText);
+    descriptionText.innerHTML = this.description;
+
+    cardContainer.appendChild(containerText);
+
+    const imgElement = document.createElement('img');
+    imgElement.src = this.image;
+    imgElement.alt = this.mes;
+
+    cardContainer.appendChild(imgElement);
+
+    return cardContainer;
+  }
+
+  createPresentacion() {
+    const presentacion = document.createElement('div');
+    presentacion.classList.add('presentacion');
+
+    const containerText = document.createElement('div');
+    containerText.classList.add('container-text');
+
+    const mesText = document.createElement('div');
+    mesText.classList.add('mes-text');
+    mesText.innerHTML = this.mes;
+    containerText.appendChild(mesText);
+    
+    const placeText = document.createElement('div');
+    placeText.classList.add('place-text');
+    placeText.innerHTML = this.place;
+    containerText.appendChild(placeText);
+    
+    const descriptionText = document.createElement('div');
+    descriptionText.classList.add('description-text');
+    containerText.appendChild(descriptionText);
+    descriptionText.innerHTML = this.description;
+    presentacion.appendChild(containerText);
+
+    const imgElement = document.createElement('img');
+    imgElement.src = this.image;
+    imgElement.alt = this.mes;
+
+    presentacion.appendChild(imgElement);
+
+    return presentacion;
+  }
+}
+
+const fragmentCards = document.querySelector('.fragment-cards');
+//const fragmentPresentacion = document.querySelector('.fragment-presentacion');
+/* // Agregar listeners a los botones
+document.getElementById('prevButton').addEventListener('click', prevSlide);
+document.getElementById('nextButton').addEventListener('click', nextSlide); */
+
+/* let currentIndex = 0;
+
+function prevSlide() {
+  const presentaciones = document.querySelectorAll('.presentacion');
+
+  // Ocultar la presentación actual
+  presentaciones[currentIndex].style.display = 'none';
+
+  // Actualizar currentIndex
+  currentIndex = (currentIndex - 1 + meses.length) % meses.length;
+
+  // Mostrar la nueva presentación
+  presentaciones[currentIndex].style.display = 'block';
+}
+
+function nextSlide() {
+  const presentaciones = document.querySelectorAll('.presentacion');
+
+  // Ocultar la presentación actual
+  presentaciones[currentIndex].style.display = 'none';
+
+  // Actualizar currentIndex
+  currentIndex = (currentIndex + 1) % meses.length;
+
+  // Mostrar la nueva presentación
+  presentaciones[currentIndex].style.display = 'block';
+}*/
+
+
+
+/* function showSlide(index) {
+  const presentaciones = document.querySelectorAll('.presentacion');
+
+  presentaciones[currentIndex].classList.remove('active');
+
+  currentIndex = (index + meses.length) % meses.length;
+
+  presentaciones[currentIndex].classList.add('active');
+} */
+
+meses.forEach(({ mes, place, description, image }) => { 
+  const card = new Cards(mes, place, description, image);
+  fragmentCards.appendChild(card.cardElement);
+  //fragmentPresentacion.appendChild(card.presentacionElement);
+});
+
+document.getElementById('nextButton').onclick = function(){
+  let lists = document.querySelectorAll('.card');
+  fragmentCards.appendChild(lists[0]);
+}
+
+document.getElementById('prevButton').onclick = function(){
+  let lists = document.querySelectorAll('.card');
+  fragmentCards.prepend(lists[lists.length - 1]);
+}
+
+//showSlide(currentIndex);
+
+function slide () {
+  let lists = document.querySelectorAll('.card');
+  fragmentCards.appendChild(lists[0]);
+}
+
+setInterval(slide, 3000)
+
+///////////////  SLIDER MESES  ///////////////
 const sliderContainer = document.getElementById('slider-container');
 const btnPreview = document.getElementById('btnPreview');
 const btnNext = document.getElementById('btnNext');
