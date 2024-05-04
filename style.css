@@ -51,6 +51,19 @@ ul>li:hover {
   transform: scale(1.1);
 }
 
+#search-icon {
+  width: 40px;
+  height: 40px;
+  background-color: olivedrab;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#search-icon-svg {
+}
+
 
 main {
   width: 100%;
@@ -84,8 +97,8 @@ section {
 
 .card {
   position: absolute;
-  width: 17%;
-  height: 40%;
+  width: 170px;
+  height: 220px;
   display: inline-block;
   background-position: 50% 50%;
   border-radius: 10px;
@@ -117,15 +130,15 @@ section {
 }
 
 .card:nth-child(4) {
-  left: calc(50% + 20%);
+  left: calc(50% + 190px);
 }
 
 .card:nth-child(5) {
-  left: calc(50% + 40%);
+  left: calc(50% + 380px);
 }
 
 .card:nth-child(n + 6) {
-  left: calc(50% + 60%);
+  left: calc(50% + 570px);
   opacity: 0;
 }
 
@@ -136,14 +149,15 @@ section {
   top: 20%;
   left: 5%;
   padding: 5px;
-  font-size: 8.4rem;
+  font-size: 5.5rem;
+  text-shadow: 0 0 15px #000;
   z-index: 1;
 }
 
 .container-text .place-text {
   position: relative;
   top: 1%;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 400;
 }
 
@@ -154,7 +168,7 @@ section {
 
 .container-text .description-text {
   width: 60%;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   opacity: 0.9;
   text-shadow: 0 0 10px black;
   
@@ -186,32 +200,38 @@ section {
 
 
 .ctrl-slider {
+  color: #000;
   position: absolute;
   display: flex;
-  left: 50%;
-  bottom: 2%;
-  gap: 20px;
+  left: 72%;
+  bottom: 1%;
+  gap: 15px;
   transform: translateX(-50%);
 }
 
-button {
+#prevButtonSliderMain, #nextButtonSliderMain {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   font-size: 2rem;
   text-align: center;
-  padding: 0px 10px;
-  background-color: transparent;
-  border: 2px solid rgba(0, 0, 0, 0.6);
+  background-color:  rgb(107, 142, 35);
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
 }
 
-button:hover {
+#prevButtonSliderMain:hover, #nextButtonSliderMain:hover {
   color: #ffae00;
   border-color: #ffae00;
   background-color: #ffae0020;
+}
+#prevButtonSliderMain svg, #nextButtonSliderMain svg {
+  color: white;
 }
 
 .header-section {

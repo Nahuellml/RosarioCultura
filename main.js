@@ -1,3 +1,22 @@
+///////////  SEARCH ICON  ///////////
+function navSearch() {
+  const searchIcon = document.getElementById('search-icon');
+  const inputText = document.createElement('input');
+  inputText.type = 'text';
+  inputText.placeholder = 'Buscar...';
+
+  searchIcon.insertAdjacentElement('beforeBegin',inputText);
+
+}
+
+const searchIcon = document.getElementById('search-icon');
+
+navSearch();
+
+
+
+
+
 ///////////////  SLIDER PRINCIPAL  /////////////
 const meses = [
   {
@@ -178,12 +197,12 @@ meses.forEach(({ mes, place, description, image }) => {
   //fragmentPresentacion.appendChild(card.presentacionElement);
 });
 
-document.getElementById('nextButton').onclick = function () {
+document.getElementById('nextButtonSliderMain').onclick = function () {
   let lists = document.querySelectorAll('.card');
   fragmentCards.appendChild(lists[0]);
 }
 
-document.getElementById('prevButton').onclick = function () {
+document.getElementById('prevButtonSliderMain').onclick = function () {
   let lists = document.querySelectorAll('.card');
   fragmentCards.prepend(lists[lists.length - 1]);
 }
@@ -195,7 +214,7 @@ function slide() {
   fragmentCards.appendChild(lists[0]);
 }
 
-setInterval(slide, 6000)
+//setInterval(slide, 6000)
 
 ///////////////  SLIDER MESES  ///////////////
 const sliderContainer = document.getElementById('slider-container');
