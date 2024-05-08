@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 body {
@@ -10,13 +12,17 @@ body {
 }
 
 header {
+  width: 100%;
+  height: 15%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   padding: 0.5rem;
-  position: sticky;
+  position: absolute;
   top: 0;
+  box-shadow: 0 0 5px #000;
   z-index: 5;
-  background: rgba(16, 197, 173, 0.752);
+  background: rgba(255, 255, 255, 0.152);
   backdrop-filter: blur(2px);
   overflow-x: hidden;
 }
@@ -24,26 +30,40 @@ header {
 nav {
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
-nav > ul {
+nav>ul {
   display: flex;
   width: 100%;
 }
 
-ul > li {
+ul>li {
   margin: 0 1.5rem;
-  padding: 1rem ;
+  padding: 1rem;
   list-style: none;
   color: rgb(255, 255, 255);
   cursor: pointer;
 }
 
-ul > li:hover {
+ul>li:hover {
   color: orange;
   transform: scale(1.1);
 }
+
+#search-icon {
+  width: 40px;
+  height: 40px;
+  background-color: olivedrab;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#search-icon-svg {
+}
+
 
 main {
   width: 100%;
@@ -72,13 +92,13 @@ section {
   height: 100vh;
   position: absolute;
   display: flex;
-  
+
 }
 
 .card {
   position: absolute;
-  width: 17%;
-  height: 40%;
+  width: 170px;
+  height: 220px;
   display: inline-block;
   background-position: 50% 50%;
   border-radius: 10px;
@@ -94,14 +114,15 @@ section {
 .card:nth-child(2) {
   left: 0;
   top: 0;
-  transform: translate(0,0);
+  transform: translate(0, 0);
   border-radius: 0;
   width: 100%;
   height: 100%;
   box-shadow: none;
 }
+
 .card:nth-child(n+3) {
-  box-shadow: 5px 5px 10px rgba(0, 0, 0,0.5);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .card:nth-child(3) {
@@ -109,13 +130,15 @@ section {
 }
 
 .card:nth-child(4) {
-  left: calc(50% + 20%);
+  left: calc(50% + 190px);
 }
+
 .card:nth-child(5) {
-  left: calc(50% + 40%);
+  left: calc(50% + 380px);
 }
+
 .card:nth-child(n + 6) {
-  left: calc(50% + 60%);
+  left: calc(50% + 570px);
   opacity: 0;
 }
 
@@ -123,17 +146,18 @@ section {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 5%;
+  top: 20%;
   left: 5%;
   padding: 5px;
-  font-size: 8.4rem;
+  font-size: 5.5rem;
+  text-shadow: 0 0 15px #000;
   z-index: 1;
 }
 
 .container-text .place-text {
   position: relative;
   top: 1%;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 400;
 }
 
@@ -143,9 +167,11 @@ section {
 }
 
 .container-text .description-text {
-  width: 50%;
-  font-size: 3rem;
-  opacity: 0.8;
+  width: 60%;
+  font-size: 1.5rem;
+  opacity: 0.9;
+  text-shadow: 0 0 10px black;
+  
 }
 
 .card:nth-child(n+3) .container-text {
@@ -174,31 +200,38 @@ section {
 
 
 .ctrl-slider {
+  color: #000;
   position: absolute;
   display: flex;
-  left: 50%;
-  bottom: 2%;
-  gap: 20px;
+  left: 72%;
+  bottom: 1%;
+  gap: 15px;
   transform: translateX(-50%);
 }
-button {
+
+#prevButtonSliderMain, #nextButtonSliderMain {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   font-size: 2rem;
   text-align: center;
-  padding: 0px 10px;
-  background-color: transparent;
-  border: 2px solid rgba(0, 0, 0, 0.6);
+  background-color:  rgb(107, 142, 35);
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
 }
 
-button:hover {
-  color:  #ffae00;
+#prevButtonSliderMain:hover, #nextButtonSliderMain:hover {
+  color: #ffae00;
   border-color: #ffae00;
   background-color: #ffae0020;
+}
+#prevButtonSliderMain svg, #nextButtonSliderMain svg {
+  color: white;
 }
 
 .header-section {
@@ -231,7 +264,7 @@ button:hover {
   border: 2px solid orange;
 }
 
- #section2 {
+#section2 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -304,6 +337,7 @@ button:hover {
 
 #section3 {
   background: radial-gradient(purple, black);
+  height: 150vh;
 }
 
 #section3 .titulo {
@@ -311,46 +345,131 @@ button:hover {
 }
 
 .container-grid {
+  text-align: right;
   height: 80%;
-  padding: 2rem 5rem;
+  padding: 2rem 11%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(4,1fr);
-  gap: 10px;
-  grid-template-areas: 
-    "cultura arquitectura urbanismo"
-    "cultura arte arte"
-    "literatura historia leyendas"
-    "musica musica leyendas"
+  grid-template-rows: repeat(4, 1fr);
+  gap: 12px;
+  grid-template-areas:
+    "historia arquitectura urbanismo"
+    "historia arte arte"
+    "literatura cultura musica"
+    "leyendas  leyendas musica"
+}
+
+.container-grid span {
+  padding: 2%;
+  font-size: 1.4rem;
+  color: black;
+  font-weight: bolder;
+  text-align: left;
 }
 
 .section-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
   background-color: rgba(0, 255, 255, 0.418);
-  color: white;
+  border: 2px solid black;
+  color: rgb(28, 9, 9);
   border-radius: 10px;
+  image-rendering: auto;
+  transition: all 0.3s ease;
+
+}
+
+.section-grid span {
+  color: white;
+}
+
+.section-grid img {
+  width: 100%;
+  /* Ajustar el ancho de la imagen al 100% del contenedor */
+  height: auto;
+  /* Mantener la relación de aspecto */
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-grid:hover {
+  transform: scale(1.10);
+  cursor: pointer;
+
 }
 
 #grid-cultura {
   grid-area: cultura;
+  background-image: url('assets/CulturaCopia.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
 }
+
 #grid-arquitectura {
   grid-area: arquitectura;
+  background-image: url('assets/ArquitecturaCopia.webp');
+  background-size: cover;
+
 }
+
+#grid-arquitectura::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#grid-arquitectura span {
+  color: white;
+  position: relative;
+}
+
 #grid-arte {
   grid-area: arte;
+  background-image: url('assets/ArteCopia.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
 }
+
 #grid-historia {
   grid-area: historia;
+  background-image: url('assets/HistoriaCopia.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 #grid-literatura {
   grid-area: literatura;
+  background-image: url('assets/Literatura.jpg');
+  background-size: cover;
 }
+
 #grid-urbanismo {
   grid-area: urbanismo;
+  background-image: url('assets/UrbanismoCopia.webp');
 }
+
 #grid-leyendas {
   grid-area: leyendas;
+  background-image: url('assets/Group\ 3\ \(3\).jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
 }
+
 #grid-musica {
   grid-area: musica;
+  background-image: url("assets/Música2.jpg");
+  background-position: center;
 }
