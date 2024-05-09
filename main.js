@@ -15,8 +15,6 @@ navSearch();
 
 
 
-
-
 ///////////////  SLIDER PRINCIPAL  /////////////
 const meses = [
   {
@@ -115,6 +113,7 @@ class Cards {
   createPresentacion() {
     const presentacion = document.createElement('div');
     presentacion.classList.add('presentacion');
+    presentacion.style.transformOrigin = 'bottom';
 
     const containerText = document.createElement('div');
     containerText.classList.add('container-text');
@@ -146,50 +145,6 @@ class Cards {
 }
 
 const fragmentCards = document.querySelector('.fragment-cards');
-//const fragmentPresentacion = document.querySelector('.fragment-presentacion');
-/* // Agregar listeners a los botones
-document.getElementById('prevButton').addEventListener('click', prevSlide);
-document.getElementById('nextButton').addEventListener('click', nextSlide); */
-
-/* let currentIndex = 0;
-
-function prevSlide() {
-  const presentaciones = document.querySelectorAll('.presentacion');
-
-  // Ocultar la presentación actual
-  presentaciones[currentIndex].style.display = 'none';
-
-  // Actualizar currentIndex
-  currentIndex = (currentIndex - 1 + meses.length) % meses.length;
-
-  // Mostrar la nueva presentación
-  presentaciones[currentIndex].style.display = 'block';
-}
-
-function nextSlide() {
-  const presentaciones = document.querySelectorAll('.presentacion');
-
-  // Ocultar la presentación actual
-  presentaciones[currentIndex].style.display = 'none';
-
-  // Actualizar currentIndex
-  currentIndex = (currentIndex + 1) % meses.length;
-
-  // Mostrar la nueva presentación
-  presentaciones[currentIndex].style.display = 'block';
-}*/
-
-
-
-/* function showSlide(index) {
-  const presentaciones = document.querySelectorAll('.presentacion');
-
-  presentaciones[currentIndex].classList.remove('active');
-
-  currentIndex = (index + meses.length) % meses.length;
-
-  presentaciones[currentIndex].classList.add('active');
-} */
 
 meses.forEach(({ mes, place, description, image }) => {
   const card = new Cards(mes, place, description, image);
