@@ -159,8 +159,9 @@ document.getElementById('nextButtonSliderMain').onclick = function () {
 
 document.getElementById('prevButtonSliderMain').onclick = function () {
   let lists = document.querySelectorAll('.card');
-  fragmentCards.prepend(lists[lists.length - 1]);
+  fragmentCards.insertBefore(lists[lists.length - 1], lists[0]);
 }
+
 
 //showSlide(currentIndex);
 
@@ -169,7 +170,7 @@ function slide() {
   fragmentCards.appendChild(lists[0]);
 }
 
-//setInterval(slide, 6000)
+setInterval(slide, 6000)
 
 ///////////////  SLIDER MESES  ///////////////
 const sliderContainer = document.getElementById('slider-container');

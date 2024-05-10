@@ -100,14 +100,14 @@ section {
   border-radius: 10px;
   font-family: 'Oswald', sans-serif;
   color: white;
-  bottom: 5%;
   overflow: hidden;
-  transition: all 0.5s;
-  /* z-index: 1; */
+  transition: all .7s;
+  top: 59%; 
 }
 
 .card:nth-child(1),
 .card:nth-child(2) {
+  transform-origin: bottom;
   left: 0;
   top: 0;
   transform: translate(0, 0);
@@ -203,9 +203,10 @@ section {
   position: absolute;
   display: flex;
   left: 75%;
-  bottom: 0.2rem;
+  top: calc(60% + 20rem);
   gap: 15px;
   transform: translateX(-50%);
+  z-index: 5;
 }
 
 #prevButtonSliderMain, #nextButtonSliderMain {
