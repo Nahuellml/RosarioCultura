@@ -334,9 +334,6 @@ section {
   transform: scale(1.05);
   filter: drop-shadow(0 0 5px rgba(16, 197, 173, 0.752));
 }
-.container-mes:not(:hover) {
-  filter: blur(2px);
-}
 
 #section3 {
   background: radial-gradient(purple, black);
