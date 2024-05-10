@@ -327,12 +327,15 @@ section {
   border-radius: 20px;
   filter: drop-shadow(0 0 5px black);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all .5s ;
 }
 
 .container-mes:hover {
   transform: scale(1.05);
   filter: drop-shadow(0 0 5px rgba(16, 197, 173, 0.752));
+}
+.container-mes:not(:hover) {
+  filter: blur(2px);
 }
 
 #section3 {
@@ -373,103 +376,65 @@ section {
   align-items: left;
   text-align: left;
   background-color: rgba(0, 255, 255, 0.418);
+  box-shadow: 0 0 5px orange;
   border: 2px solid black;
   color: rgb(28, 9, 9);
   border-radius: 10px;
   image-rendering: auto;
   transition: all 0.3s ease;
+  overflow: hidden;
+}
 
+.section-grid:hover {
+  box-shadow: 0 0 5px white;
+  border: 5px solid orange;
 }
 
 .section-grid span {
+  position: absolute;
   color: white;
+  text-shadow: 0 0 10px #000;
 }
 
 .section-grid img {
   width: 100%;
-  /* Ajustar el ancho de la imagen al 100% del contenedor */
-  height: auto;
-  /* Mantener la relación de aspecto */
-  overflow: hidden;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 100%;
+  object-fit: cover;
+  transition: all .5s;
 }
 
-.section-grid:hover {
-  transform: scale(1.10);
-  cursor: pointer;
-
+.section-grid:hover img {
+  transform: scale(1.1);
 }
 
 #grid-cultura {
   grid-area: cultura;
-  background-image: url('assets/CulturaCopia.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
 }
 
 #grid-arquitectura {
   grid-area: arquitectura;
-  background-image: url('assets/ArquitecturaCopia.webp');
-  background-size: cover;
-
-}
-
-#grid-arquitectura::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#grid-arquitectura span {
-  color: white;
-  position: relative;
 }
 
 #grid-arte {
   grid-area: arte;
-  background-image: url('assets/ArteCopia.webp');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
 }
 
 #grid-historia {
   grid-area: historia;
-  background-image: url('assets/HistoriaCopia.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 #grid-literatura {
   grid-area: literatura;
-  background-image: url('assets/Literatura.jpg');
-  background-size: cover;
 }
 
 #grid-urbanismo {
   grid-area: urbanismo;
-  background-image: url('assets/UrbanismoCopia.webp');
 }
 
 #grid-leyendas {
   grid-area: leyendas;
-  background-image: url('assets/Group\ 3\ \(3\).jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
 }
 
 #grid-musica {
   grid-area: musica;
-  background-image: url("assets/Música2.jpg");
-  background-position: center;
 }

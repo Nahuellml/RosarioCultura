@@ -195,7 +195,6 @@ const images = [
   'https://blog.esplendorhoteles.com/wp-content/uploads/2019/11/Feria-de-las-colectividades.jpg',
   'https://www.cadena3.com/admin/playerswf/fotos/ARCHI_1043177.jpg'
 ];
-
 const preloadedImages = [];
 for (let i = 0; i < totalImages; i++) {
   const image = new Image();
@@ -217,7 +216,6 @@ function updateSlider() {
     const season = document.createElement('div');
     season.classList.add('season');
 
-    // Asignar color según la estación del año
     const currentMonth = (i + 1) % 12;
     if (currentMonth >= 1 && currentMonth <= 3) {
       season.style.backgroundColor = '#ffda07'; // Verano
