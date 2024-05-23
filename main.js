@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function() {
+  const loader = document.querySelector('.loader');
+  const content = document.querySelector('.content');
+
+  window.addEventListener('load', function() {
+      loader.style.display = 'none';
+      content.classList.add('show');
+  });
+});
+
+
 ///////////  SEARCH ICON  ///////////
 function navSearch() {
   const searchIcon = document.getElementById('search-icon');

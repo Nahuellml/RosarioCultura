@@ -12,147 +12,150 @@
 </head>
 
 <body>
-  <header>
-    <div class="logo">
-      <img src="assets/logo.svg" alt="Logotipo del proyecto" srcset="">
-    </div>
-    <nav class="container-nav">
-      <ul>
-        <li>
-          <a href="#enciclopedia">Enciclopedia</a>
-          <div class="content-list">
-            <ul>
-              <li><a href="#arte">Arte</a></li>
-              <li><a href="#historia">Historia</a></li>
-              <li><a href="#musica">Música</a></li>
-              <li><a href="#">Más...</a></li>
-            </ul>
+  <div class="loader"></div> 
+  <div class="content">
+    <header>
+      <div class="logo">
+        <img src="assets/logo.svg" alt="Logotipo del proyecto" srcset="">
+      </div>
+      <nav class="container-nav">
+        <ul class="menu-list">
+          <li>
+            <a href="#enciclopedia">Enciclopedia</a>
+            <div class="content-list">
+              <ul>
+                <li><a href="#arte">Arte</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#musica">Música</a></li>
+                <li><a href="#">Más...</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#articulos">Artículos</a>
+            <div class="content-list">
+              <ul>
+                <li><a href="#literarios">Literarios</a></li>
+                <li><a href="#periodisticos">Periodísticos</a></li>
+                <li><a href="#biograficos">Biográficos</a></li>
+                <li><a href="#opinion">De opinión</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#novedades">Novedades</a>
+            <div class="content-list">
+              <ul>
+                <li><a href="#eventos">Calendario de Eventos</a></li>
+                <li><a href="#noticias">Noticias Destacadas</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#contacto">Contáctanos</a>
+            <div class="content-list">
+              <ul>
+                <li><a href="#contribuciones">Contribuciones</a></li>
+                <li><a href="#escribenos">Escríbenos</a></li>
+                <li><a href="#redes">Redes</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div id="search-icon">
+        <img id="search-icon-svg" src="assets/icons/search-icon.svg">
+      </div>
+      <!-- <button class="hamburger hamburger--collapse" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button> -->
+    </header>
+    <main>
+      <section id="section1" class="section">
+        <div class="container">
+          <!-- <div class="fragment-presentacion"></div> -->
+          <div class="fragment-cards"></div>
+          <div class="ctrl-slider">
+            <button id="prevButtonSliderMain">
+              <img src="assets/icons/arrowLeftCards.svg" alt="">
+            </button>
+            <button id="nextButtonSliderMain">
+              <img src="assets/icons/arrowRightCards.svg" alt="">
+            </button>
           </div>
-        </li>
-        <li>
-          <a href="#articulos">Artículos</a>
-          <div class="content-list">
-            <ul>
-              <li><a href="#literarios">Literarios</a></li>
-              <li><a href="#periodisticos">Periodísticos</a></li>
-              <li><a href="#biograficos">Biográficos</a></li>
-              <li><a href="#opinion">De opinión</a></li>
-            </ul>
+        </div>
+      </section>
+      <section id="section2" class="section">
+        <div class="header-section">
+          <div class="titulo">
+            <h1>Calendario de Eventos</h1>
           </div>
-        </li>
-        <li>
-          <a href="#novedades">Novedades</a>
-          <div class="content-list">
-            <ul>
-              <li><a href="#eventos">Calendario de Eventos</a></li>
-              <li><a href="#noticias">Noticias Destacadas</a></li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <a href="#contacto">Contáctanos</a>
-          <div class="content-list">
-            <ul>
-              <li><a href="#contribuciones">Contribuciones</a></li>
-              <li><a href="#escribenos">Escríbenos</a></li>
-              <li><a href="#redes">Redes</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </nav>
-    <div id="search-icon">
-      <img id="search-icon-svg" src="assets/icons/search-icon.svg">
-    </div>
-    <!-- <button class="hamburger hamburger--collapse" type="button">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-    </button> -->
-  </header>
-  <main>
-    <section id="section1" class="section">
-      <div class="container">
-        <!-- <div class="fragment-presentacion"></div> -->
-        <div class="fragment-cards"></div>
-        <div class="ctrl-slider">
-          <button id="prevButtonSliderMain">
-            <img src="assets/icons/arrowLeftCards.svg" alt="">
+          <button type="button" class="ver-todo">VER TODO</button>
+        </div>
+        <div class="slider-container" id="slider-container">
+        </div>
+        <div class="btnPreviewContainer">
+          <button type="button" class="slider-button" ><svg width="50" height="50" viewBox="0 0 50 50">
+              <path id="btnPreview"
+                d="M42.3085 4.77444V45.2258C42.3085 47.0639 41.2518 48.7397 39.5919 49.5338C38.9363 49.8426 38.2328 50.0001 37.5342 50.0001C36.4647 50.0001 35.4017 49.6373 34.5375 48.9418L9.46749 28.7161C8.34393 27.8106 7.69144 26.4436 7.69144 25.0001C7.69144 23.5567 8.34393 22.1896 9.46749 21.2841L34.5391 1.05842C35.9698 -0.0969667 37.9368 -0.322952 39.5967 0.466405C41.2518 1.26054 42.3085 2.93473 42.3085 4.77444Z" />
+            </svg>
           </button>
-          <button id="nextButtonSliderMain">
-            <img src="assets/icons/arrowRightCards.svg" alt="">
+          <button type="button" class="slider-button" ><svg width="50" height="50" viewBox="0 0 50 50">
+              <path id="btnNext"
+                d="M7.69157 45.2236V4.77226C7.69157 2.93415 8.74829 1.25835 10.4082 0.464223C11.0638 0.155483 11.7673 -0.0020687 12.4659 -0.0020687C13.5354 -0.0020687 14.5984 0.360779 15.4626 1.05624L40.5326 21.2819C41.6562 22.1874 42.3087 23.5545 42.3087 24.9979C42.3087 26.4414 41.6562 27.8084 40.5326 28.714L15.461 48.9396C14.0303 50.095 12.0633 50.321 10.4034 49.5316C8.74829 48.7375 7.69157 47.0633 7.69157 45.2236Z" />
+            </svg>
           </button>
         </div>
-      </div>
-    </section>
-    <section id="section2" class="section">
-      <div class="header-section">
-        <div class="titulo">
-          <h1>Calendario de Eventos</h1>
+      </section>
+      <section id="section3" class="section">
+        <div class="header-section">
+          <div class="titulo">
+            <h1>Explorar Según Intereses</h1>
+          </div>
+          <button type="button" class="ver-todo">VER TODO</button>
         </div>
-        <button type="button" class="ver-todo">VER TODO</button>
-      </div>
-      <div class="slider-container" id="slider-container">
-      </div>
-      <div class="btnPreviewContainer">
-        <button type="button" class="slider-button" ><svg width="50" height="50" viewBox="0 0 50 50">
-            <path id="btnPreview"
-              d="M42.3085 4.77444V45.2258C42.3085 47.0639 41.2518 48.7397 39.5919 49.5338C38.9363 49.8426 38.2328 50.0001 37.5342 50.0001C36.4647 50.0001 35.4017 49.6373 34.5375 48.9418L9.46749 28.7161C8.34393 27.8106 7.69144 26.4436 7.69144 25.0001C7.69144 23.5567 8.34393 22.1896 9.46749 21.2841L34.5391 1.05842C35.9698 -0.0969667 37.9368 -0.322952 39.5967 0.466405C41.2518 1.26054 42.3085 2.93473 42.3085 4.77444Z" />
-          </svg>
-        </button>
-        <button type="button" class="slider-button" ><svg width="50" height="50" viewBox="0 0 50 50">
-            <path id="btnNext"
-              d="M7.69157 45.2236V4.77226C7.69157 2.93415 8.74829 1.25835 10.4082 0.464223C11.0638 0.155483 11.7673 -0.0020687 12.4659 -0.0020687C13.5354 -0.0020687 14.5984 0.360779 15.4626 1.05624L40.5326 21.2819C41.6562 22.1874 42.3087 23.5545 42.3087 24.9979C42.3087 26.4414 41.6562 27.8084 40.5326 28.714L15.461 48.9396C14.0303 50.095 12.0633 50.321 10.4034 49.5316C8.74829 48.7375 7.69157 47.0633 7.69157 45.2236Z" />
-          </svg>
-        </button>
-      </div>
-    </section>
-    <section id="section3" class="section">
-      <div class="header-section">
-        <div class="titulo">
-          <h1>Explorar Según Intereses</h1>
+        <div class="container-grid">
+          <div class="section-grid" id="grid-cultura">
+            <img src="assets/Cultura.webp" alt="Cultura">
+            <span>Cultura</span>
+          </div>
+          <div class="section-grid" id="grid-arquitectura">
+            <img src="assets/Arquitectura.webp" alt="Arquitectura">
+            <span>Arquitectura</span>
+          </div>
+          <div class="section-grid" id="grid-arte">
+            <img src="assets/Arte.webp" alt="Arte">
+            <span>Arte</span>
+          </div>
+          <div class="section-grid" id="grid-historia">
+            <img src="assets/Historia.webp" alt="Historia">
+            <span>Historia</span>
+          </div>
+          <div class="section-grid" id="grid-literatura">
+            <img src="assets/Literatura.jpg" alt="Literatura">
+            <span>Literatura</span>
+          </div>
+          <div class="section-grid" id="grid-urbanismo">
+            <img src="assets/Urbanismo.webp" alt="Urbanismo">
+            <span>Urbanismo</span>
+          </div>
+          <div class="section-grid" id="grid-leyendas">
+            <img src="assets/Leyendas.jpg" alt="Leyendas">
+            <span>Leyendas Urbanas</span>
+          </div>
+          <div class="section-grid" id="grid-musica">
+            <img src="assets/Música.jpg" alt="Música">
+            <span>Música</span>
+          </div>
         </div>
-        <button type="button" class="ver-todo">VER TODO</button>
-      </div>
-      <div class="container-grid">
-        <div class="section-grid" id="grid-cultura">
-          <img src="assets/Cultura.webp" alt="Cultura">
-          <span>Cultura</span>
-        </div>
-        <div class="section-grid" id="grid-arquitectura">
-          <img src="assets/Arquitectura.webp" alt="Arquitectura">
-          <span>Arquitectura</span>
-        </div>
-        <div class="section-grid" id="grid-arte">
-          <img src="assets/Arte.webp" alt="Arte">
-          <span>Arte</span>
-        </div>
-        <div class="section-grid" id="grid-historia">
-          <img src="assets/Historia.webp" alt="Historia">
-          <span>Historia</span>
-        </div>
-        <div class="section-grid" id="grid-literatura">
-          <img src="assets/Literatura.jpg" alt="Literatura">
-          <span>Literatura</span>
-        </div>
-        <div class="section-grid" id="grid-urbanismo">
-          <img src="assets/Urbanismo.webp" alt="Urbanismo">
-          <span>Urbanismo</span>
-        </div>
-        <div class="section-grid" id="grid-leyendas">
-          <img src="assets/Leyendas.jpg" alt="Leyendas">
-          <span>Leyendas Urbanas</span>
-        </div>
-        <div class="section-grid" id="grid-musica">
-          <img src="assets/Música.jpg" alt="Música">
-          <span>Música</span>
-        </div>
-      </div>
-
-    </section>
-    <section id="section4" class="section">Sección 4</section>
-    <section id="section5" class="section">Sección 5</section>
-  </main>
+  
+      </section>
+      <section id="section4" class="section">Sección 4</section>
+      <section id="section5" class="section">Sección 5</section>
+    </main>
+  </div>
   <script src="main.js"></script>
 </body>
 
