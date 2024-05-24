@@ -48,7 +48,7 @@ const meses = [
 
   },
   {
-    mes: 'Mitos Urbanos', place: 'Ciudad enigmática', description: 'Misterios, sucesos extraordinarios y leyendas populares conforman esta estotérica sección<span>.</span>', image: 'https://imgs.search.brave.com/EhKcLvaTMu4-MhDILXah4eg2UTb65lVFUVFo2DEkJa8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/d2VsY29tZWFyZ2Vu/dGluYS5jb20vcm9z/YXJpby9pbWFnZW5l/cy9yb3NhcmlvMjku/anBn'
+    mes: 'Mitos Urbanos', place: 'Ciudad enigmática', description: 'Misterios, sucesos extraordinarios y leyendas populares conforman esta esotérica sección<span>.</span>', image: 'https://imgs.search.brave.com/EhKcLvaTMu4-MhDILXah4eg2UTb65lVFUVFo2DEkJa8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/d2VsY29tZWFyZ2Vu/dGluYS5jb20vcm9z/YXJpby9pbWFnZW5l/cy9yb3NhcmlvMjku/anBn'
 
   },
   {
@@ -181,7 +181,7 @@ function slide() {
   fragmentCards.appendChild(lists[0]);
 }
 
-//// setInterval(slide, 6000)
+setInterval(slide, 10000)
 
 ///////////////  SLIDER MESES  ///////////////
 const sliderContainer = document.getElementById('slider-container');

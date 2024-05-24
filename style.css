@@ -61,14 +61,13 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.5rem 2rem;
   position: absolute;
   top: 0;
   box-shadow: 0 0 5px #000;
   z-index: 5;
   background: rgba(255, 255, 255, 0.152);
   backdrop-filter: blur(2px);
-  overflow: hidden;
 }
 
 .container-nav {
@@ -81,12 +80,12 @@ header {
 .menu-list {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   font-size: 1.5rem;
 }
 
-.menu-list a:hover {
+.menu-list a {
   color: orange;
 }
 
@@ -100,6 +99,16 @@ header {
   position: absolute;
   display: flex;
   flex-direction: column;
+}
+
+.content-list a {
+  color: white;
+  font-size: 1.2rem;
+  border-bottom: 2px solid orange;
+}
+
+.content-list a:hover {
+  color: #ffae00;
 }
 
 .menu-list li:hover > .content-list {
