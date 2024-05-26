@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-///////////  SEARCH ICON  ///////////
+/* ///////////  SEARCH ICON  ///////////
 function navSearch() {
   const searchIcon = document.getElementById('search-icon');
   const inputText = document.createElement('input');
@@ -22,7 +22,7 @@ function navSearch() {
 
 const searchIcon = document.getElementById('search-icon');
 
-navSearch();
+navSearch(); */
 
 
 
