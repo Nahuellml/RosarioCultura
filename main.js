@@ -181,7 +181,7 @@ function slide() {
   fragmentCards.appendChild(lists[0]);
 }
 
-setInterval(slide, 10000)
+//setInterval(slide, 10000)
 
 ///////////////  SLIDER MESES  ///////////////
 const sliderContainer = document.getElementById('slider-container');
