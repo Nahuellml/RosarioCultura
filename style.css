@@ -20,11 +20,12 @@ ul,li,a {
 
 body {
   background: #000;
-  width: 100dvw;
+  width: 100dvw; 
   min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .loader {
@@ -68,7 +69,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: .5rem;
   position: absolute;
   top: 0;
   box-shadow: 0 0 5px #000;
@@ -145,7 +146,7 @@ main {
 
 section {
   width: 100%;
-  height: 100dvh;
+  min-height: 100dvh;
   position: relative;
   scroll-snap-align: start;
 }
@@ -158,7 +159,7 @@ section {
 
 .fragment-cards {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   position: absolute;
   display: flex;
 }
@@ -173,7 +174,8 @@ section {
   font-family: 'Oswald', sans-serif;
   color: white;
   overflow: hidden;
-  transition: left .5s, bottom .5s, transform .7s;
+  transform-origin: 100% 100%;
+  transition: left .5s, right .5s, inset .8s ;
 }
 
 .card:nth-child(1),
@@ -181,7 +183,7 @@ section {
   left: 0;
   top: 0;
   transform: translate(0, 0);
-  transform-origin: left bottom;
+  transform-origin: center;
   border-radius: 0;
   width: 100%;
   min-height: 100vh;
@@ -196,6 +198,8 @@ section {
 
 .card:nth-child(3) {
   left: 50%;
+  transform-origin: 100% 100%;
+  transition: left 1s, right .8s;
 }
 
 .card:nth-child(4) {
@@ -344,6 +348,7 @@ section {
 }
 
 #section2 {
+  height: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -514,6 +519,131 @@ section {
 #grid-musica {
   grid-area: musica;
 }
+
+#section4 {
+  position: relative;
+  overflow: hidden;
+}
+
+.container-section-articles {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(70, 95, 95);
+  perspective: 800px;
+}
+
+.container-primary {
+  width: 240px;
+  height: 240px;
+  margin: 80px auto;
+  perspective: 800px;
+}
+
+.container-primary:before {
+  content: '';
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 75px 20px rgba(0,0,0,0.1),
+    inset 0 0 350px 350px rgba(0,0,0,0.1);
+  transform: rotateX(95deg) translateZ(-80px) scale(1);
+  animation: rotateShadow 16s infinite;
+}
+
+.cube-article .primary-article {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  backface-visibility: hidden;
+}
+
+.cube-article {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease-in-out;
+  animation: rotate 16s infinite;
+}
+
+.cube-article .primary-article:nth-child(1) {
+  transform: rotateY(0deg) translateZ(120px);
+}
+.cube-article .primary-article:nth-child(2) {
+  transform: rotateY(90deg) translateZ(120px);
+}
+.cube-article .primary-article:nth-child(3) {
+  transform: rotateY(-90deg) translateZ(120px);
+}
+.cube-article .primary-article:nth-child(4) {
+  transform: rotateY(180deg) translateZ(120px);
+}
+
+@keyframes rotate {
+  0% { transform:  rotateY(0deg);}
+  25% { transform:  rotateY(90deg);}
+  50% { transform:  rotateY(180deg);}
+  75% { transform:  rotateY(270deg);}
+  100% { transform:  rotateY(360deg);}
+}
+@keyframes rotateShadow {
+  0% { transform:  rotateX(95deg) translateZ(-80px) scale(1) rotateZ(360deg);}
+  25% { transform:  rotateX(95deg) translateZ(-80px) scale(1) rotateZ(270deg);}
+  50% { transform:  rotateX(95deg) translateZ(-80px) scale(1) rotateZ(180deg);}
+  75% { transform:  rotateX(95deg) translateZ(-80px) scale(1) rotateZ(90deg);}
+  100% { transform:  rotateX(95deg) translateZ(-80px) scale(1) rotateZ(0deg);}
+}
+
+.primary-article {
+  width: 100%;
+  height: 100%;
+  background: red;
+}
+
+.container-secondary {
+  width: 100%;
+  height: 250px;
+  --duration: 60s;
+  display: flex;
+  align-items: center;
+  background: rgba(88, 97, 9, 0.507);
+  white-space: nowrap;
+  transform: translateX(0);
+  transition: transform 600s linear;
+  overflow: hidden; /* Para evitar el desbordamiento */
+  position: relative;
+}
+
+.slider-articles {
+  display: inline-block;
+  animation: scroll var(--duration) linear infinite;
+  white-space: nowrap; /* Para mantener los elementos en una línea */
+}
+
+.container-secondary:hover {
+  transform: translateX(-500%);
+}
+
+.container-secondary:hover .slider-articles {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+
 
 /* @media screen and (max-width: 480px) {
   .logo img {

@@ -1,3 +1,5 @@
+import ArticleElement from "./components/ArticleElement.js";
+
 document.addEventListener("DOMContentLoaded", function() {
   const loader = document.querySelector('.loader');
   const content = document.querySelector('.content');
@@ -275,3 +277,7 @@ window.addEventListener('click', (e) => {
 
 // Inicializar el slider
 updateSlider();
+
+
+//Sección Artículos 
+
