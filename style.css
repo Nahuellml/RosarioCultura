@@ -175,7 +175,7 @@ section {
   color: white;
   overflow: hidden;
   transform-origin: 100% 100%;
-  transition: left .5s, right .5s, inset .8s ;
+  transition: left .5s, right .5s ;
 }
 
 .card:nth-child(1),
@@ -183,7 +183,6 @@ section {
   left: 0;
   top: 0;
   transform: translate(0, 0);
-  transform-origin: center;
   border-radius: 0;
   width: 100%;
   min-height: 100vh;
@@ -199,7 +198,7 @@ section {
 .card:nth-child(3) {
   left: 50%;
   transform-origin: 100% 100%;
-  transition: left 1s, right .8s;
+  transition: left 1s, right 1s;
 }
 
 .card:nth-child(4) {
