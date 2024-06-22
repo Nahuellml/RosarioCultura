@@ -14,8 +14,8 @@ class ArticleElement extends HTMLElement {
         .article-container {
           display: inline-block;
           justify-content: flex-end; 
-          width: 300px;
-          height: 200px;
+          width: 250px;
+          height: 150px;
           margin: 0 5px;
           background: #f20;
           overflow: hidden;

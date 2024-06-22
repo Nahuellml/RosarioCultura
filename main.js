@@ -27,6 +27,18 @@ const searchIcon = document.getElementById('search-icon');
 navSearch(); */
 
 
+/////////////// MENU HAMBURGUESA  //////////////
+
+const btnHamburguer = document.querySelector('.btn-hamburguer');
+const menuList = document.querySelector('.menu-list');
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.btn-hamburguer')) {
+    btnHamburguer.classList.toggle('is-active');
+    menuList.classList.toggle('is-active');
+  }
+})
+
+
 
 ///////////////  SLIDER PRINCIPAL  /////////////
 const meses = [
