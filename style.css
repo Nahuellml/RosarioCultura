@@ -12,6 +12,16 @@
   box-sizing: inherit;
 } */
 
+figure {
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
 ul,li,a {
   display: inline-block;
   list-style: none;
@@ -84,22 +94,58 @@ header {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   overflow: hidden;
 }
 
 .logo {
   cursor: pointer;
   width: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .logo img {
   width: 100%;
+
 }
 
 .btn-hamburguer  {
   z-index: 1000;
   position: relative;
+}
+
+.hamburger .hamburger-inner,
+.hamburger .hamburger-inner::before,
+.hamburger .hamburger-inner::after {
+  background-color: #fff;
+  color: #fff;
+  z-index: 1000;
+  width: 25px;
+  height: 2px;
+}
+
+.hamburger.is-:hover .hamburger-inner,
+.hamburger.is-:hover .hamburger-inner::before,
+.hamburger.is-:hover .hamburger-inner::after {
+  background-color: #fff; 
+  color: #fff;
+}
+
+.hamburger--collapse.is-active .hamburger-inner,
+.hamburger--collapse.is-active .hamburger-inner::before,
+.hamburger--collapse.is-active .hamburger-inner::after {
+  background-color: #fff; /* Color rojo cuando está activo */
+}
+
+.hamburger .hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger--collapse .hamburger-inner:after {
+  top: -16px;
 }
 
 .menu-list {
@@ -108,6 +154,7 @@ header {
   width: 100vw;
   height: 100vh;
   top: 0;
+  left: 0;
   background-color: #000000c5;
   transition: opacity .5s ease, visibility 0s linear .5s;
   opacity: 0;
@@ -740,9 +787,32 @@ section {
 }
 
 @media (min-width: 768px) {
-  .menu-list {
-    display: flex;
+  .logo {
+    width: 20vw;
   }
+
+  .btn-hamburguer {
+    visibility: hidden;
+  }
+
+  .menu-list {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible; 
+    background: none;
+    gap: 20px;
+  }
+
+  .menu-list a {
+    font-size: 1em;
+  }
+
 }
 
 @media (min-width: 1024px) {
