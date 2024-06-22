@@ -43,52 +43,36 @@ document.addEventListener('click', (e) => {
 ///////////////  SLIDER PRINCIPAL  /////////////
 const meses = [
   {
-    mes: 'Rosariopedia', place: 'La Enciclopedia', description: 'La Enciclopedia de Proyecto cultura contiene una amplia y variada temática<span>.</span>', image: 'assets/Monumento.jpg'
+    mes: 'Rosariopedia', place: 'La Enciclopedia', description: 'La Enciclopedia de Proyecto Cultura contiene un amplio y variado abanico de temas sobre la historia, el arte y la cultura de nuestra ciudad<span>.</span>', image: 'assets/Monumento.jpg'
   },
   {
-    mes: 'Artículos', place: 'Lecturas', description: 'Compendios literarios y periodísticos, cartas de lectores, microbiografías y más<span>...</span>', image: 'assets/rosarioorr.jpg'
+    mes: 'Artículos', place: 'Lecturas', description: 'Compendios literarios y periodísticos, cartas de lectores,microbiografías, notas de opinión y mucho más<span>...</span>', image: 'assets/slider-principal/articulos.jpg'
 
   },
   {
-    mes: 'Novedades', place: 'Lo último', description: 'Calendario de eventos, noticias destacadas e información actualizada<span>.</span>', image: 'https://img.freepik.com/foto-gratis/puesta-sol-misurina_181624-34793.jpg?t=st=1713888383~exp=1713891983~hmac=4783aaf120e9c98e2da14c6603e53a67f1c13627b600418864714602076fc314&w=740'
+    mes: 'Novedades', place: 'Lo último', description: 'En este sección encontraras nuestro Calendario de Eventos, las noticias más destacadas y toda la información actualizada<span>.</span>', image: 'assets/slider-principal/novedades.JPG'
 
   },
   {
-    mes: 'Investigación', place: 'Con la lupa', description: 'Explora una amplia variedad de archivos, fuentes documentales y contribuciones relacionadas<span>.</span>', image: 'https://images.unsplash.com/photo-1708804760932-d97756d67419?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    mes: 'Investigación', place: 'Con la lupa', description: 'Explora una amplia variedad de archivos, fuentes documentales y contribuciones relacionadas con las que cuenta Proyecto Cultura<span>.</span>', image: 'assets/slider-principal/investigacion.JPG'
 
   },
   {
-    mes: 'Descubre', place: 'Sitios interesantes', description: 'Embárcarte en un recorrido por los lugares más representativos de nuestra ciudad<span>.</span>', image: 'https://imgs.search.brave.com/I5U6zhjLDM_4w1h-IQK1hFNyHK1tEWFmDUMP_UK9SDI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQz/ODExODc1Ni9lcy9m/b3RvL3RvbWEtYSVD/MyVBOXJlYS1zb2Jy/ZS1lbC1yJUMzJUFE/by1wYXJhbiVDMyVB/MS1mcmVudGUtYS1s/YS1jaXVkYWQtZGUt/cm9zYXJpby5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9YS02/M29EZXI5WUNEMkg4/QzBpWWVBZWcyMTg3/NzFVdl81eFJOTVM5/Sng5ST0'
+    mes: 'Descubre', place: 'Sitios interesantes', description: 'Embárcarte en un recorrido por los lugares más representativos y sobresalientes de Rosario<span>.</span>', image: 'assets/slider-principal/descubre.JPG'
 
   },
   {
-    mes: 'Mitos Urbanos', place: 'Ciudad enigmática', description: 'Misterios, sucesos extraordinarios y leyendas populares conforman esta esotérica sección<span>.</span>', image: 'https://imgs.search.brave.com/EhKcLvaTMu4-MhDILXah4eg2UTb65lVFUVFo2DEkJa8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/d2VsY29tZWFyZ2Vu/dGluYS5jb20vcm9z/YXJpby9pbWFnZW5l/cy9yb3NhcmlvMjku/anBn'
+    mes: 'Mitos Urbanos', place: 'Ciudad enigmática', description: 'Misterios, sucesos extraordinarios y leyendas populares son sólo algunas de las curiosidades que dan forma y contenido a esta sección<span>.</span>', image: 'assets/slider-principal/mitos-urbanos.jpg'
 
   },
   {
-    mes: 'Legados', place: 'Patrimonio de todos', description: 'Historias, lugares e ideas que han pasado a ser propiedad de todos los rosarinos<span>.</span>', image: 'https://plus.unsplash.com/premium_photo-1700577888245-9729a4fe6040?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    mes: 'Legados', place: 'Patrimonio de todos', description: 'Historias, lugares e ideas que a lo largo del tiempo han pasado a ser patrimonio común de todos los rosarinos<span>.</span>', image: 'assets/slider-principal/legados.JPG'
 
   },
   {
-    mes: 'Personajes', place: 'Destacados', description: 'Vidas de hombres y mujeres que han destacado en sus disciplinas y acciones', image: 'https://imgs.search.brave.com/y0ojmSsbE7pFmI3VVNqJv1B-dDLvPYTAgXtjY1kXilo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/d2VsY29tZWFyZ2Vu/dGluYS5jb20vcm9z/YXJpby9pbWFnZW5l/cy9yb3NhcmlvLTE0/OS5qcGc'
+    mes: 'Personajes', place: 'Destacados', description: 'Vida y obra de hombres y mujeres ilustres que de múltiples formas han contribuido al desarrollo general de la ciudad', image: 'assets/slider-principal/personalidades.png'
 
-  },
-  {
-    mes: 'Septiembre', place: 'Carnavales', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'https://media.istockphoto.com/id/1220007180/es/foto/vista-panor%C3%A1mica-de-la-ciudad-de-rosario-a-lo-largo-del-r%C3%ADo-paran%C3%A1-durante-la-puesta-del-sol.jpg?s=612x612&w=0&k=20&c=TyuUWT17vhzEmfIDFbGpTr8s7it-5zHwo1VSPYau8-A='
-
-  },
-  {
-    mes: 'Octubre', place: 'Carnavales', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'https://lh5.googleusercontent.com/proxy/n27m6HwUaWVVfWwfHHbc4ICjdzXtAB8U1132B_S3o5Ric3ytNc9Ev6Q2mgKNb5Sdr1f3pOR4NGeehJjl6w8nmpKAKFQCevWAEcZ0Ie0G5a3tZ3KtVvNo4LtqJhkWSNj7dE06'
-
-  },
-  {
-    mes: 'Noviembre', place: 'Colectividades', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'https://media.istockphoto.com/id/1441190334/es/foto/hermosa-foto-de-un-d%C3%ADa-soleado-en-skate-park.jpg?s=612x612&w=0&k=20&c=-yhtTQGJKfIq8WwzsKwKMp1bib1FDAbm4aWKx_2dnc4='
-
-  },
-  {
-    mes: 'Diciembre', place: 'Fiestas', description: 'loremjdjfjf jdfsaj fjfsajfsajfsj jf ajfs jfssjafsfhwjr', image: 'https://t4.ftcdn.net/jpg/02/28/72/81/360_F_228728148_rTnDutNQJZwhaJTAjpID197qYi6HTRbA.jpg'
-
-  },
+  }
 ];
 
 

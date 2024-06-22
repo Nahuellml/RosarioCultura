@@ -37,10 +37,10 @@ class ArticleElement extends HTMLElement {
         }
 
       </style>
-      <div class="article-container">
-        <img class="article-img" src="./assets/${name}.jpg" alt="${name}">
-        <h2 class="article-h2" >${name}</h2>
-      </div>
+      <a href="/section-pages/articulos.html" class="article-container">
+        <img class="article-img" src="./assets/slider-articulos/${name}.jpg" alt="${name}">
+        <h2 class="article-h2">${name}</h2>
+      </a>
     `;
 
     //Adjuntar el contenido del template al shadow root
