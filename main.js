@@ -54,7 +54,7 @@ const meses = [
 
   },
   {
-    mes: 'Investigación', place: 'Con la lupa', description: 'Explora una amplia variedad de archivos, fuentes documentales y contribuciones relacionadas con las que cuenta Proyecto Cultura<span>.</span>', image: 'assets/slider-principal/investigacion.JPG'
+    mes: 'Investigación', place: 'Con la lupa', description: 'Explora una amplia variedad de archivos, fuentes documentales y contribuciones relacionadas con las que cuenta Proyecto Cultura<span>.</span>', image: 'assets/slider-principal/investigacion.jpg'
 
   },
   {
