@@ -604,9 +604,9 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(70, 95, 95);
   perspective: 800px;
-  background: linear-gradient(135deg, rgba(56,17,56,1) 0%, rgba(56,17,56,1) 22%, rgba(71,71,71,1) 32%, rgba(23,27,143,1) 45%, rgba(29,25,129,1) 50%, rgba(56,17,56,1) 75%, rgba(56,17,56,1) 90%)
+  background: linear-gradient(135deg, rgba(56,17,56,1) 0%, rgba(56,17,56,1) 22%, rgba(71,71,71,1) 32%, rgba(23,27,143,1) 45%, rgba(29,25,129,1) 50%, rgba(56,17,56,1) 75%, rgba(56,17,56,1) 90%);
+  overflow: hidden;
 }
 
 .container-primary {
