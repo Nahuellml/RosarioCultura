@@ -1,3 +1,224 @@
+/* Estilos básicos para móviles */
 body {
-  background-color: aqua;
+  width: 100%;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.encabezado {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto-superior {
+  width: 100%;
+  height: auto;
+  background-color: #52695C;
+  padding: 0rem;
+  text-align: left;
+  border: 1px solid black;
+}
+
+.texto-superior h1, .texto-superior h2 {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.texto-superior h1 {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.texto-superior h2 {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+.imagen {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.imagen img, .imagen1 img {
+  object-fit: cover;
+}
+
+.imagen1 img {
+  border: 1px solid black;
+
+
+}
+
+.texto-inferior {
+  width: 100%;
+  height: auto;
+  background-color: #000;
+  padding: 0rem;
+  color: #fff;
+  text-align: justify;
+  
+}
+
+.texto-inferior h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 0.5rem;
+  text-decoration: underline;
+}
+
+.texto-inferior p {
+  margin: 0;
+  font-size: 1rem;
+  padding: 0 2rem 0 0.5rem;
+}
+
+main {
+  padding: 1rem;
+}
+
+article {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  padding: 1rem;
+  border: 1px solid black;
+}
+article p {
+  font-size: 1rem;
+  text-align: justify;
+}
+
+article p::first-letter  {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  color: orange;
+}
+
+@media (min-width: 480px) {
+  .texto-superior h1 {
+      margin: 0;
+      font-size: 2rem;
+      padding-left: 1rem;
+  }
+}
+  .texto-superior h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      padding-left: 1rem;
+  }
+  .texto-inferior h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      padding-left: 1rem;
+  }
+  .texto-inferior p {
+      margin: 0;
+      font-size: 1.2rem;
+      padding-left: 1rem;
+  }
+  article  {
+      font-size: 1.5rem;
+  }
+
+/* Estilos para tablets */
+@media (min-width: 768px) {
+  .texto-superior h1 {
+      margin: 0;
+      font-size: 2rem;
+      padding-left: 1rem;
+  }
+
+  .texto-superior h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      padding-right: 1rem;
+  }
+  .texto-inferior h3 {
+      font-size: 1.5rem;
+  }
+
+  .imagen img {
+      width: 100%;
+      min-height: 540px;
+      border: 3px solid black;
+  }
+
+  article {
+      font-size: 1.5rem;
+  }
+}
+
+/* Estilos para escritorio */
+@media (min-width: 960px) {
+  .texto-superior h1 {
+      font-size: 2.5rem;
+      padding-left: 1rem;
+  }
+
+  .texto-superior h2 {
+      font-size: 1.5rem;
+      padding-right: 3rem;
+      margin-top: -1.5rem;
+      text-align: right;
+  }
+
+  .texto-inferior h3 {
+      font-size: 2rem;
+      padding-left: 2rem;
+  }
+
+  .texto-inferior p {
+      padding-left: 2rem;
+  }
+
+  article {
+      font-size: 2rem;
+  }
+
+  main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+  }
+
+  footer {
+      padding: 1.5rem 0;
+  }
+
+  footer p {
+      color: orange;
+  }
 }
