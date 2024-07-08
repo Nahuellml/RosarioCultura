@@ -502,7 +502,7 @@ section {
 #section3 {
   /* background: radial-gradient(purple, black); */
   background-color: #fff;
-  height: 150vh;
+  /* height: 150vh; */
 }
 
 .container-grid {
@@ -510,14 +510,19 @@ section {
   height: 80%;
   padding: 2rem 11%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr);
-  gap: 12px;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(200px, 1fr);
+  grid-auto-rows: minmax(200px, 1fr);
+  gap: 10px;
   grid-template-areas:
-    "historia arquitectura urbanismo"
-    "historia arte arte"
-    "literatura cultura musica"
-    "leyendas  leyendas musica"
+      "historia"
+      "arquitectura"
+      "urbanismo"
+      "arte"
+      "cultura"
+      "literatura"
+      "leyendas"
+      "musica";
 }
 
 .container-grid span {
@@ -549,7 +554,7 @@ section {
 }
 
 .section-grid span {
-  font-size: 1rem;
+  font-size: 1.5rem;
   position: absolute;
   color: white;
   text-shadow: 0 0 10px #000;
@@ -836,6 +841,17 @@ section {
   }
   .container-text .description-text {
     font-size: 1.5rem;
+  }
+
+  .container-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "historia arquitectura urbanismo"
+      "historia arte arte"
+      "literatura cultura musica"
+      "leyendas leyendas musica";
+    gap: 15px;
   }
 
 }
