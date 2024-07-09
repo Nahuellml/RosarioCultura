@@ -1,4 +1,5 @@
 import ArticleElement from "./components/ArticleElement.js";
+import initHamburgerMenu from "./js/hamburguerMenu.js";
 
 document.addEventListener("DOMContentLoaded", function() {
   const loader = document.querySelector('.loader');
@@ -8,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
       loader.style.display = 'none';
       content.classList.add('show');
   });
+
+  initHamburgerMenu();
 });
 
 
@@ -29,14 +32,7 @@ navSearch(); */
 
 /////////////// MENU HAMBURGUESA  //////////////
 
-const btnHamburguer = document.querySelector('.btn-hamburguer');
-const menuList = document.querySelector('.menu-list');
-document.addEventListener('click', (e) => {
-  if (e.target.closest('.btn-hamburguer')) {
-    btnHamburguer.classList.toggle('is-active');
-    menuList.classList.toggle('is-active');
-  }
-})
+
 
 
 
