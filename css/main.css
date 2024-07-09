@@ -98,7 +98,7 @@ header {
 
 .logo {
   cursor: pointer;
-  width: 30vw;
+  width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,11 +114,11 @@ header {
 .hamburger .hamburger-inner,
 .hamburger .hamburger-inner::before,
 .hamburger .hamburger-inner::after {
-  background-color: #fff;
-  color: #fff;
+  background-color: orange;
   z-index: 1000;
   width: 25px;
   height: 2px;
+  box-shadow: 0 0 5px black;
 }
 
 .hamburger.is-:hover .hamburger-inner,
@@ -751,7 +751,7 @@ section {
 
 @media (min-width: 768px) {
   .logo {
-    width: 35vw;
+    width: 200px;
   }
 
   .btn-hamburguer {
