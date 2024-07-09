@@ -1,5 +1,5 @@
 import ArticleElement from "./components/ArticleElement.js";
-import initHamburgerMenu from "./js/hamburguerMenu.js";
+import hamburgerMenu from "./js/hamburguerMenu.js";
 
 document.addEventListener("DOMContentLoaded", function() {
   const loader = document.querySelector('.loader');
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
       content.classList.add('show');
   });
 
-  initHamburgerMenu();
+  hamburgerMenu('.btn-hamburguer', '.menu-list', '.menu-list li a');
 });
 
 
@@ -175,7 +175,7 @@ function slide() {
   fragmentCards.appendChild(lists[0]);
 }
 
-//setInterval(slide, 10000)
+setInterval(slide, 7000)
 
 ///////////////  SLIDER MESES  ///////////////
 const sliderContainer = document.getElementById('slider-container');
