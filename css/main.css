@@ -789,6 +789,10 @@ section {
     pointer-events: none;
   }
 
+  .menu-list a:hover .content-list ul {
+    pointer-events: visible;
+  }
+
   .container-text .place-text {
     font-size: 2rem;
   }
@@ -798,9 +802,25 @@ section {
   .container-text .description-text {
     font-size: 1.5rem;
   }
+  .separador {
+    position: absolute;
+    width: 100%;
+    height: 250px; /* Ajusta la altura según tus necesidades */
+    background: radial-gradient(purple, black);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
+    bottom: -1px;
+    z-index: -1;
+  }
+  
+  
+  #section3 {
+    height: 150dvh;
+    background: radial-gradient(purple, black);
+  }
 
   .container-grid {
-    grid-template-columns: repeat(3, 1fr);
+    height: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(4, 1fr);
     grid-template-areas:
       "historia arquitectura urbanismo"
