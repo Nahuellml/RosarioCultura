@@ -29,7 +29,7 @@ ul,li,a {
 }
 
 body {
-  background: #000;
+  background: #fff;
   width: 100dvw; 
   min-height: 100dvh;
   display: flex;
@@ -72,7 +72,6 @@ nav {
   width: 100%;
   height: 70px;
   /* background: #3f1313; */
-  overflow: hidden;
 }
 
 header {
@@ -95,22 +94,17 @@ header {
   height: 100%;
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
 }
 
 .logo {
   cursor: pointer;
-  width: 30vw;
+  width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 0 .5rem;
 }
 
-.logo img {
-  width: 100%;
-
-}
 
 .btn-hamburguer  {
   z-index: 1000;
@@ -120,11 +114,11 @@ header {
 .hamburger .hamburger-inner,
 .hamburger .hamburger-inner::before,
 .hamburger .hamburger-inner::after {
-  background-color: #fff;
-  color: #fff;
+  background-color: orange;
   z-index: 1000;
   width: 25px;
   height: 2px;
+  box-shadow: 0 0 5px black;
 }
 
 .hamburger.is-:hover .hamburger-inner,
@@ -176,14 +170,12 @@ header {
 }
 
 .content-list {
-  display: none;
   opacity: 0;
-  transition: opacity 5s ease;
 }
 
 .content-list ul {
   position: absolute;
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
@@ -200,7 +192,7 @@ header {
 .menu-list li:hover > .content-list {
   display: block;
   opacity: 1;
-  transition: opacity 5s ease;
+  transition: opacity .5s ease;
 }
 
 #search-icon {
@@ -218,6 +210,7 @@ main {
   width: 100%;
   height: 100dvh;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 section {
@@ -226,7 +219,7 @@ section {
   position: relative;
 }
 
-#section1 {
+#inicio {
   position: relative;
   display: flex;
   overflow: hidden;
@@ -427,6 +420,14 @@ section {
   border: 2px solid orange;
 }
 
+.cola {
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  background: linear-gradient(to bottom, rgba(73, 65, 50, 0.836) 0%, rgba(74, 65, 4, 0.326) 30%, #ffffff50 );
+  border-radius: 0 0 20% 20%;
+}
+
 #section2 {
   height: 100%;
   overflow: hidden;
@@ -500,12 +501,9 @@ section {
 }
 
 #section3 {
-  background: radial-gradient(purple, black);
-  height: 150vh;
-}
-
-#section3 .titulo {
-  color: white;
+  /* background: radial-gradient(purple, black); */
+  background-color: #fff;
+  /* height: 150vh; */
 }
 
 .container-grid {
@@ -513,14 +511,19 @@ section {
   height: 80%;
   padding: 2rem 11%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr);
-  gap: 12px;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(200px, 1fr);
+  grid-auto-rows: minmax(200px, 1fr);
+  gap: 10px;
   grid-template-areas:
-    "historia arquitectura urbanismo"
-    "historia arte arte"
-    "literatura cultura musica"
-    "leyendas  leyendas musica"
+      "historia"
+      "arquitectura"
+      "urbanismo"
+      "arte"
+      "cultura"
+      "literatura"
+      "leyendas"
+      "musica";
 }
 
 .container-grid span {
@@ -552,7 +555,7 @@ section {
 }
 
 .section-grid span {
-  font-size: 1rem;
+  font-size: 1.5rem;
   position: absolute;
   color: white;
   text-shadow: 0 0 10px #000;
@@ -613,9 +616,9 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(70, 95, 95);
   perspective: 800px;
-  background: linear-gradient(135deg, rgba(56,17,56,1) 0%, rgba(56,17,56,1) 22%, rgba(71,71,71,1) 32%, rgba(23,27,143,1) 45%, rgba(29,25,129,1) 50%, rgba(56,17,56,1) 75%, rgba(56,17,56,1) 90%)
+  background-color: #fff;
+  overflow: hidden;
 }
 
 .container-primary {
@@ -628,7 +631,7 @@ section {
 .container-primary:before {
   content: '';
   position: absolute;
-  top: 90px;
+  top: 200px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -726,56 +729,6 @@ section {
 }
 
 
-
-
-/* @media screen and (max-width: 480px) {
-  .logo img {
-    width: 100px;
-    height: 100px;
-  }
-  .menu-list {
-    display: none;
-  }
-  .card {
-    width: 10rem;
-    height: 14rem;
-    top: 65%;
-  }
-  .container-text {
-    font-size: 4rem;
-  }
-  .container-text .mes-text {
-    font-size: 4rem;
-  }
-
-  .container-text .place-text {
-    font-size: 2rem;
-  }
-  .container-text .description-text {
-    font-size: 1.75rem;
-  }
-
-  .card:nth-child(n+3) {
-    font-size: 1.75rem;
-  }
-
-  .card:nth-child(n+3) .container-text {
-    top: 65%;
-  }
-  
-  .card:nth-child(n+3) .container-text .mes-text {
-    font-size: 1.75rem;
-  }
-  .card:nth-child(n+3) .container-text .place-text {
-    font-size: 1.2rem;
-  }
-
-  .ctrl-slider {
-    left: 70%;
-    top: 95%;
-  }
-} */
-
 @media (min-width: 480px) {
   .container-primary {
     width: 280px;
@@ -785,21 +738,21 @@ section {
   
   .cube-article .primary-article:nth-child(1) {
   transform: rotateY(0deg) translateZ(140px);
-}
-.cube-article .primary-article:nth-child(2) {
-  transform: rotateY(90deg) translateZ(140px);
-}
-.cube-article .primary-article:nth-child(3) {
-  transform: rotateY(-90deg) translateZ(140px);
-}
-.cube-article .primary-article:nth-child(4) {
-  transform: rotateY(180deg) translateZ(140px);
-}
+  }
+  .cube-article .primary-article:nth-child(2) {
+    transform: rotateY(90deg) translateZ(140px);
+  }
+  .cube-article .primary-article:nth-child(3) {
+    transform: rotateY(-90deg) translateZ(140px);
+  }
+  .cube-article .primary-article:nth-child(4) {
+    transform: rotateY(180deg) translateZ(140px);
+  }
 }
 
 @media (min-width: 768px) {
   .logo {
-    width: 35vw;
+    width: 200px;
   }
 
   .btn-hamburguer {
@@ -823,6 +776,24 @@ section {
   .menu-list a {
     font-size: 1.2rem;
   }
+
+  .content-list {
+    display: flex;
+  }
+
+  .content-list ul {
+    display: flex;
+    padding: 1rem 3rem 1rem 0;
+    background-color: #00000050;
+    border: 2px solid #ffae00;
+    border-radius: 5px;
+    pointer-events: none;
+  }
+
+  .menu-list a:hover .content-list ul {
+    pointer-events: visible;
+  }
+
   .container-text .place-text {
     font-size: 2rem;
   }
@@ -831,6 +802,33 @@ section {
   }
   .container-text .description-text {
     font-size: 1.5rem;
+  }
+  .separador {
+    position: absolute;
+    width: 100%;
+    height: 250px; /* Ajusta la altura según tus necesidades */
+    background: radial-gradient(purple, black);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
+    bottom: -1px;
+    z-index: -1;
+  }
+  
+  
+  #section3 {
+    height: 150dvh;
+    background: radial-gradient(purple, black);
+  }
+
+  .container-grid {
+    height: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "historia arquitectura urbanismo"
+      "historia arte arte"
+      "literatura cultura musica"
+      "leyendas leyendas musica";
+    gap: 15px;
   }
 
 }

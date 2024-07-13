@@ -1,4 +1,5 @@
 import ArticleElement from "./components/ArticleElement.js";
+import hamburgerMenu from "./js/hamburguerMenu.js";
 
 document.addEventListener("DOMContentLoaded", function() {
   const loader = document.querySelector('.loader');
@@ -8,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
       loader.style.display = 'none';
       content.classList.add('show');
   });
+
+  hamburgerMenu('.btn-hamburguer', '.menu-list', '.menu-list li a');
 });
 
 
@@ -29,14 +32,7 @@ navSearch(); */
 
 /////////////// MENU HAMBURGUESA  //////////////
 
-const btnHamburguer = document.querySelector('.btn-hamburguer');
-const menuList = document.querySelector('.menu-list');
-document.addEventListener('click', (e) => {
-  if (e.target.closest('.btn-hamburguer')) {
-    btnHamburguer.classList.toggle('is-active');
-    menuList.classList.toggle('is-active');
-  }
-})
+
 
 
 
@@ -179,7 +175,7 @@ function slide() {
   fragmentCards.appendChild(lists[0]);
 }
 
-//setInterval(slide, 10000)
+setInterval(slide, 7000)
 
 ///////////////  SLIDER MESES  ///////////////
 const sliderContainer = document.getElementById('slider-container');
