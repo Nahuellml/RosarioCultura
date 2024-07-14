@@ -6,6 +6,12 @@
   box-sizing: border-box;
   font-family: "Oswald", sans-serif;
   font-size: 16px;
+  /* outline: 1px solid red; */
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* *, *::before, *::after {
@@ -29,14 +35,13 @@ ul,li,a {
 }
 
 body {
+  position: relative;
   background: #fff;
   width: 100dvw; 
   min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  scroll-behavior: smooth;
 }
 
 .loader {
@@ -81,12 +86,17 @@ header {
   justify-content: space-around;
   align-items: center;
   padding: .5rem;
-  position: absolute;
+  position: fixed;
   top: 0;
   box-shadow: 0 0 5px #000;
   z-index: 5;
   background: rgba(255, 255, 255, 0.152);
   backdrop-filter: blur(2px);
+  transition: transform .5s ease-in-out;
+}
+
+.hidden-header {
+  transform: translateY(-100%);
 }
 
 .container-nav {
@@ -131,7 +141,7 @@ header {
 .hamburger--collapse.is-active .hamburger-inner,
 .hamburger--collapse.is-active .hamburger-inner::before,
 .hamburger--collapse.is-active .hamburger-inner::after {
-  background-color: #fff; /* Color rojo cuando está activo */
+  background-color: #fff;
 }
 
 .hamburger .hamburger-inner::before {
@@ -207,22 +217,24 @@ header {
 }
 
 main {
+  position: relative;
   width: 100%;
   height: 100dvh;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+  /* overflow-x: hidden; */
+  /* scroll-behavior: smooth; */
 }
 
 section {
   width: 100%;
   min-height: 100dvh;
   position: relative;
+  /* scroll-behavior: smooth; */
 }
 
 #inicio {
   position: relative;
   display: flex;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .fragment-cards {
@@ -789,9 +801,9 @@ section {
     pointer-events: none;
   }
 
-  .menu-list a:hover .content-list ul {
+  /* .menu-list a:hover .content-list ul {
     pointer-events: visible;
-  }
+  } */
 
   .container-text .place-text {
     font-size: 2rem;
@@ -802,19 +814,19 @@ section {
   .container-text .description-text {
     font-size: 1.5rem;
   }
-  .separador {
+  /* .separador {
     position: absolute;
     width: 100%;
-    height: 250px; /* Ajusta la altura según tus necesidades */
+    height: 250px; 
     background: radial-gradient(purple, black);
     clip-path: polygon(0 100%, 100% 100%, 100% 0);
     bottom: -1px;
     z-index: -1;
-  }
+  } */
   
   
   #section3 {
-    height: 150dvh;
+    /* height: 150dvh; */
     background: radial-gradient(purple, black);
   }
 

@@ -5,10 +5,24 @@ document.addEventListener("DOMContentLoaded", function() {
   const loader = document.querySelector('.loader');
   const content = document.querySelector('.content');
 
+  const header = document.querySelector('header');
+  let lastScrollPosition = 0;
+
+
   window.addEventListener('load', function() {
       loader.style.display = 'none';
       content.classList.add('show');
   });
+
+  window.addEventListener('scroll', () => {
+    const currentScrollPosition = window.scrollY;
+    if (currentScrollPosition > 300 && currentScrollPosition > lastScrollPosition) {
+      header.classList.add('hidden-header');
+    } else {
+      header.classList.remove('hidden-header');
+    }
+    lastScrollPosition = currentScrollPosition;
+  })
 
   hamburgerMenu('.btn-hamburguer', '.menu-list', '.menu-list li a');
 });
@@ -28,12 +42,6 @@ function navSearch() {
 const searchIcon = document.getElementById('search-icon');
 
 navSearch(); */
-
-
-/////////////// MENU HAMBURGUESA  //////////////
-
-
-
 
 
 ///////////////  SLIDER PRINCIPAL  /////////////
@@ -269,7 +277,4 @@ window.addEventListener('click', (e) => {
 
 // Inicializar el slider
 updateSlider();
-
-
-//Sección Artículos 
 
