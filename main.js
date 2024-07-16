@@ -1,5 +1,6 @@
 import ArticleElement from "./components/ArticleElement.js";
 import hamburgerMenu from "./js/hamburguerMenu.js";
+import sliderMain from "./js/slider-principal.js";
 
 document.addEventListener("DOMContentLoaded", function() {
   const loader = document.querySelector('.loader');
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
   })
 
   hamburgerMenu('.btn-hamburguer', '.menu-list', '.menu-list li a');
+  sliderMain();
 });
 
 
@@ -159,13 +161,12 @@ class Cards {
 
 const fragmentCards = document.querySelector('.fragment-cards');
 
-meses.forEach(({ mes, place, description, image }) => {
+/* meses.forEach(({ mes, place, description, image }) => {
   const card = new Cards(mes, place, description, image);
   fragmentCards.appendChild(card.cardElement);
-  //fragmentPresentacion.appendChild(card.presentacionElement);
-});
+}); */
 
-document.getElementById('nextButtonSliderMain').onclick = function () {
+/* document.getElementById('nextButtonSliderMain').onclick = function () {
   let lists = document.querySelectorAll('.card');
   fragmentCards.appendChild(lists[0]);
 }
@@ -173,7 +174,7 @@ document.getElementById('nextButtonSliderMain').onclick = function () {
 document.getElementById('prevButtonSliderMain').onclick = function () {
   let lists = document.querySelectorAll('.card');
   fragmentCards.insertBefore(lists[lists.length - 1], lists[0]);
-}
+} */
 
 
 //showSlide(currentIndex);
@@ -183,7 +184,7 @@ function slide() {
   fragmentCards.appendChild(lists[0]);
 }
 
-setInterval(slide, 7000)
+//setInterval(slide, 7000)
 
 ///////////////  SLIDER MESES  ///////////////
 const sliderContainer = document.getElementById('slider-container');
