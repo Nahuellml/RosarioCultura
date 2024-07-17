@@ -5,15 +5,17 @@ import sliderMain from "./js/slider-principal.js";
 document.addEventListener("DOMContentLoaded", function() {
   const loader = document.querySelector('.loader');
   const content = document.querySelector('.content');
+  const $body = document.querySelector('body');
 
   const header = document.querySelector('header');
   let lastScrollPosition = 0;
 
 
-  /* window.addEventListener('load', function() {
+  window.addEventListener('load', function() {
       loader.style.display = 'none';
       content.classList.add('show');
-  }); */
+      $body.classList.remove('block-scroll')
+  });
 
   window.addEventListener('scroll', () => {
     const currentScrollPosition = window.scrollY;
