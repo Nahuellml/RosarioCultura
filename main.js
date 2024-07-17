@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", function() {
   let lastScrollPosition = 0;
 
 
-  window.addEventListener('load', function() {
+  /* window.addEventListener('load', function() {
       loader.style.display = 'none';
       content.classList.add('show');
-  });
+  }); */
 
   window.addEventListener('scroll', () => {
     const currentScrollPosition = window.scrollY;
