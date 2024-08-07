@@ -38,7 +38,7 @@ class ArticleElement extends HTMLElement {
 
       </style>
       <a href="./pages-sections/articulos/sub-articulos/${name}.html" class="article-container">
-        <img class="article-img" src="./assets/slider-articulos/${name}.jpg" alt="${name}">
+        <img class="article-img" src="./assets/slider-articulos/${name}.webp" alt="${name}">
         <h2 class="article-h2">${name}</h2>
       </a>
     `;
