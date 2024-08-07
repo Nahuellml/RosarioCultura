@@ -44,4 +44,7 @@ export default function sliderMain() {
           }
       }, {once: true}) // Remove the event listener after it's triggered once
   }
+    setInterval(function () {
+        moveSlider('next')
+    }, 20000);
 }
