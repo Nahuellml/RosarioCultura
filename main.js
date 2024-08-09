@@ -17,6 +17,53 @@ document.addEventListener("DOMContentLoaded", function() {
       $body.classList.remove('block-scroll')
   });
 
+  /////////////  SHOW CONTENT MENU  //////////////
+
+  const menuLinks = document.querySelectorAll('.menu-list > li > a');
+  const contentLists = document.querySelectorAll('.content-list');
+
+  
+
+  // Evento para abrir/cerrar el menú desplegable
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+      
+      const content = link.nextElementSibling;
+      
+      if (window.innerWidth > 768) {
+        event.preventDefault();
+        // Cerrar todos los paneles abiertos excepto el actual
+        contentLists.forEach(panel => {
+          if (panel !== content) {
+              panel.classList.remove('active');
+          }
+        });
+  
+        // Alternar el estado del panel actual
+        content.classList.toggle('active');
+      }
+    });
+  });
+
+  // Evento para cerrar los menús al hacer clic fuera
+  document.addEventListener('click', function(event) {
+      let isClickInsideMenu = false;
+
+      menuLinks.forEach(link => {
+          if (link.contains(event.target) || link.nextElementSibling.contains(event.target)) {
+              isClickInsideMenu = true;
+          }
+      });
+
+      if (!isClickInsideMenu) {
+          contentLists.forEach(panel => {
+              panel.classList.remove('active');
+          });
+      }
+  });
+
+  ///////////  NAVBAR HIDDEN  ///////////////
+
   window.addEventListener('scroll', () => {
     const currentScrollPosition = window.scrollY;
     if (currentScrollPosition > 300 && currentScrollPosition > lastScrollPosition) {
@@ -47,146 +94,6 @@ const searchIcon = document.getElementById('search-icon');
 
 navSearch(); */
 
-
-///////////////  SLIDER PRINCIPAL  /////////////
-const meses = [
-  {
-    mes: 'Rosariopedia', place: 'La Enciclopedia', description: 'La Enciclopedia de Proyecto Cultura contiene un amplio y variado abanico de temas sobre la historia, el arte y la cultura de nuestra ciudad<span>.</span>', image: 'assets/Monumento.jpg'
-  },
-  {
-    mes: 'Artículos', place: 'Lecturas', description: 'Compendios literarios y periodísticos, cartas de lectores,microbiografías, notas de opinión y mucho más<span>...</span>', image: 'assets/slider-principal/articulos.jpg'
-
-  },
-  {
-    mes: 'Novedades', place: 'Lo último', description: 'En este sección encontraras nuestro Calendario de Eventos, las noticias más destacadas y toda la información actualizada<span>.</span>', image: 'assets/slider-principal/novedades.JPG'
-
-  },
-  {
-    mes: 'Investigación', place: 'Con la lupa', description: 'Explora una amplia variedad de archivos, fuentes documentales y contribuciones relacionadas con las que cuenta Proyecto Cultura<span>.</span>', image: 'assets/slider-principal/investigacion.jpg'
-
-  },
-  {
-    mes: 'Descubre', place: 'Sitios interesantes', description: 'Embárcarte en un recorrido por los lugares más representativos y sobresalientes de Rosario<span>.</span>', image: 'assets/slider-principal/descubre.JPG'
-
-  },
-  {
-    mes: 'Mitos Urbanos', place: 'Ciudad enigmática', description: 'Misterios, sucesos extraordinarios y leyendas populares son sólo algunas de las curiosidades que dan forma y contenido a esta sección<span>.</span>', image: 'assets/slider-principal/mitos-urbanos.jpg'
-
-  },
-  {
-    mes: 'Legados', place: 'Patrimonio de todos', description: 'Historias, lugares e ideas que a lo largo del tiempo han pasado a ser patrimonio común de todos los rosarinos<span>.</span>', image: 'assets/slider-principal/legados.JPG'
-
-  },
-  {
-    mes: 'Personajes', place: 'Destacados', description: 'Vida y obra de hombres y mujeres ilustres que de múltiples formas han contribuido al desarrollo general de la ciudad', image: 'assets/slider-principal/personalidades.png'
-
-  }
-];
-
-
-class Cards {
-  constructor(mes, place, description, image) {
-    this.mes = mes;
-    this.place = place;
-    this.description = description;
-    this.image = image;
-    this.cardElement = this.createCard();
-    this.presentacionElement = this.createPresentacion();
-  }
-
-  createCard() {
-    const cardContainer = document.createElement('div');
-    cardContainer.classList.add('card');
-
-    const containerText = document.createElement('div');
-    containerText.classList.add('container-text');
-
-    const placeText = document.createElement('div');
-    placeText.classList.add('place-text');
-    placeText.innerHTML = this.place;
-    containerText.appendChild(placeText);
-
-    const mesText = document.createElement('div');
-    mesText.classList.add('mes-text');
-    mesText.innerHTML = this.mes;
-    containerText.appendChild(mesText);
-
-    const descriptionText = document.createElement('div');
-    descriptionText.classList.add('description-text');
-    containerText.appendChild(descriptionText);
-    descriptionText.innerHTML = this.description;
-
-    cardContainer.appendChild(containerText);
-
-    const imgElement = document.createElement('img');
-    imgElement.src = this.image;
-    imgElement.alt = this.mes;
-
-    cardContainer.appendChild(imgElement);
-
-    return cardContainer;
-  }
-
-  createPresentacion() {
-    const presentacion = document.createElement('div');
-    presentacion.classList.add('presentacion');
-    presentacion.style.transformOrigin = 'bottom';
-
-    const containerText = document.createElement('div');
-    containerText.classList.add('container-text');
-
-    const mesText = document.createElement('div');
-    mesText.classList.add('mes-text');
-    mesText.innerHTML = this.mes;
-    containerText.appendChild(mesText);
-
-    const placeText = document.createElement('div');
-    placeText.classList.add('place-text');
-    placeText.innerHTML = this.place;
-    containerText.appendChild(placeText);
-
-    const descriptionText = document.createElement('div');
-    descriptionText.classList.add('description-text');
-    containerText.appendChild(descriptionText);
-    descriptionText.innerHTML = this.description;
-    presentacion.appendChild(containerText);
-
-    const imgElement = document.createElement('img');
-    imgElement.src = this.image;
-    imgElement.alt = this.mes;
-
-    presentacion.appendChild(imgElement);
-
-    return presentacion;
-  }
-}
-
-const fragmentCards = document.querySelector('.fragment-cards');
-
-/* meses.forEach(({ mes, place, description, image }) => {
-  const card = new Cards(mes, place, description, image);
-  fragmentCards.appendChild(card.cardElement);
-}); */
-
-/* document.getElementById('nextButtonSliderMain').onclick = function () {
-  let lists = document.querySelectorAll('.card');
-  fragmentCards.appendChild(lists[0]);
-}
-
-document.getElementById('prevButtonSliderMain').onclick = function () {
-  let lists = document.querySelectorAll('.card');
-  fragmentCards.insertBefore(lists[lists.length - 1], lists[0]);
-} */
-
-
-//showSlide(currentIndex);
-
-function slide() {
-  let lists = document.querySelectorAll('.card');
-  fragmentCards.appendChild(lists[0]);
-}
-
-//setInterval(slide, 7000)
 
 ///////////////  SLIDER MESES  ///////////////
 const sliderContainer = document.getElementById('slider-container');
