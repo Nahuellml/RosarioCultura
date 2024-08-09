@@ -59,7 +59,7 @@ body {
 .loader img {
   width: 40%;
   height: auto;
-  animation: animation-loader 2s ease-in-out infinite;
+  animation: animation-loader 1s ease-in-out infinite;
 }
 
 @keyframes animation-loader {
